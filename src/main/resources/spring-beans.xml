@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="houseBean1" class="com.example.testing.model.House">
+        <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String"/>
+        <constructor-arg value="30" type="int"/>
+        <constructor-arg type="int" value="14"/>
+        <constructor-arg value="Myrthille" type="java.lang.String"/>
+    </bean>
+
+    <bean id="developerBean" class="com.example.testing.model.Developer">
+        <constructor-arg value=""/>
+        <property name="name" value="Mickael"/>
+        <property name="xpYear" value="4"/>
+    </bean>
+
+    <bean id="productManagerBean" class="com.example.testing.model.Developer">
+        <constructor-arg value=""/>
+        <property name="name" value="Paul"/>
+        <property name="xpYear" value="15"/>
+    </bean>
+
+    <bean id="companyBean" class="com.example.testing.model.Company">
+        <constructor-arg value=""/>
+        <property name="name" value="Boris company"/>
+        <property name="devJava" ref="developerBean"/>
+        <property name="projectManager" ref="productManagerBean"/>
+    </bean>
+
+    <bean id="serviceBean" class="com.example.testing.model.Service">
+        <constructor-arg value="service singleton" type="java.lang.String"/>
+    </bean>
+
+    <bean id="service2Bean" class="com.example.testing.model.Service" scope="prototype">
+        <constructor-arg value="service prototype" type="java.lang.String"/>
+    </bean>
+
+    <bean id="addressBean" class="com.example.testing.model.Address">
+        <property name="address" value="TOURS"/>
+    </bean>
+
+    <bean id="customerBean" class="com.example.testing.model.Customer"
+          autowire="byName">
+        <property name="name" value="POSTE"/>
+    </bean>
+
+    <bean id="kungFuBean" class="com.example.testing.model.KungFu">
+        <constructor-arg value="Tony" type="java.lang.String"/>
+    </bean>
+
+    <bean id="pandaBean" class="com.example.testing.model.Panda" autowire="constructor">
+        <constructor-arg value="Jon" type="java.lang.String"/>
+    </bean>
+
+</beans>
+
