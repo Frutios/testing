@@ -1,9 +1,18 @@
 package com.example.testing.model;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("house")
 public class House {
+
+    @Value("Joy, Tours 37000")
     private String address;
+    @Value("25")
     private int nbWindow;
+    @Value("9")
     private int nbDoor;
+    @Value("Baker")
     private String owner;
 
     public House(String address, int nbWindow, int nbDoor, String owner){
@@ -11,6 +20,10 @@ public class House {
         this.nbWindow=nbWindow;
         this.nbDoor=nbDoor;
         this.owner=owner;
+    }
+
+    public House() {
+
     }
 
     public int getNbWindow() {
@@ -43,6 +56,16 @@ public class House {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "address='" + address + '\'' +
+                ", nbWindow=" + nbWindow +
+                ", nbDoor=" + nbDoor +
+                ", owner='" + owner + '\'' +
+                '}';
     }
 
 }

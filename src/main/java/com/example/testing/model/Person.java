@@ -2,22 +2,21 @@ package com.example.testing.model;
 
 public class Person {
 
-    private String firstname;
+    private String name;
     private String lastname;
     private String email;
 
-    public Person (String name, String firstname, String lastname, String email ) {
-        this.firstname = firstname;
+    public Person (String name, String lastname, String email ) {
         this.lastname = lastname;
         this.email= email;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLastname() {

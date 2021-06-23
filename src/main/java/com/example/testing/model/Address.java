@@ -1,7 +1,10 @@
 package com.example.testing.model;
 
+import org.springframework.stereotype.Component;
+
 import java.io.Serializable;
 
+@Component
 public class Address implements Serializable {
 
     private String Address;

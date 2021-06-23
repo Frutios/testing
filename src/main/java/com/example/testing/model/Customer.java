@@ -1,41 +1,60 @@
 package com.example.testing.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.stereotype.Service;
+
 import java.io.Serializable;
 
+@Service
+@Configurable
 public class Customer implements Serializable {
 
-    private String name;
-    private Address address;
+    private String action;
+    private int type;
+
+    @Autowired
+    private Person person;
+
+    public Customer(String action, int type, Person person) {
+        this.action = action;
+        this.type = type;
+        this.person = person;
+    }
 
     public Customer() {
     }
 
-    public Customer(String name, Address address) {
-        this.name = name;
-        this.address = address;
+    public String getAction() {
+        return action;
     }
 
-    public String getName() {
-        return name;
+    public void setAction(String action) {
+        this.action = action;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getType() {
+        return type;
     }
 
-    public Address getAddress() {
-        return address;
+    public void setType(int type) {
+        this.type = type;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     @Override
     public String toString() {
         return "Customer{" +
-                "name='" + name + '\'' +
-                ", address=" + address +
+                "action='" + action + '\'' +
+                ", type=" + type +
+                ", person=" + person +
                 '}';
     }
 }

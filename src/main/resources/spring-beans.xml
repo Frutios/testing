@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="houseBean1" class="com.example.testing.model.House">
-        <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String"/>
-        <constructor-arg value="30" type="int"/>
-        <constructor-arg type="int" value="14"/>
-        <constructor-arg value="Myrthille" type="java.lang.String"/>
-    </bean>
+<beans
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns="http://www.springframework.org/schema/beans"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.example.testing.model"/>
+
+    <!--<bean id="houseBean1" class="com.example.testing.model.House">
+        <constructor-arg value="TipTop, Tours 37000" type="java.lang.String"/>
+        <constructor-arg value="20" type="int"/>
+        <constructor-arg type="int" value="10"/>
+        <constructor-arg value="Mark" type="java.lang.String"/>
+    </bean>-->
+
+
 
     <bean id="developerBean" class="com.example.testing.model.Developer">
         <constructor-arg value=""/>
@@ -39,11 +49,6 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
         <property name="address" value="TOURS"/>
     </bean>
 
-    <bean id="customerBean" class="com.example.testing.model.Customer"
-          autowire="byName">
-        <property name="name" value="POSTE"/>
-    </bean>
-
     <bean id="kungFuBean" class="com.example.testing.model.KungFu">
         <constructor-arg value="Tony" type="java.lang.String"/>
     </bean>
@@ -52,5 +57,15 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
         <constructor-arg value="Jon" type="java.lang.String"/>
     </bean>
 
+    <bean id="personBean" class="com.example.testing.model.Person">
+        <constructor-arg value="Benjamin" type="java.lang.String"/>
+        <constructor-arg value="Tourneur" type="java.lang.String"/>
+        <constructor-arg value="benjamin@gmail.com" type="java.lang.String"/>
+    </bean>
+
+    <bean id="customer" class="com.example.testing.model.Customer">
+        <property name="action" value="Graphiste"/>
+        <property name="type" value="1"/>
+    </bean>
 </beans>
 

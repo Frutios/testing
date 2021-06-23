@@ -10,13 +10,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestingApplication {
 
 	public static void main(String[] args) {
-		//SpringApplication.run(TestingApplication.class, args);
+		SpringApplication.run(TestingApplication.class, args);
 
 		ApplicationContext cxt =
 				new ClassPathXmlApplicationContext("Spring-beans.xml");
-		House house = (House) cxt.getBean("houseBean1");
-		System.out.println(house.getOwner());
-		System.out.println(house.getAddress());
+		House house = (House) cxt.getBean("house");
+		System.out.println(house);
 
 		ApplicationContext cxt2 =
 				new ClassPathXmlApplicationContext("Spring-beans.xml");
@@ -62,6 +61,16 @@ public class TestingApplication {
 				new ClassPathXmlApplicationContext("Spring-beans.xml");
 		Panda panda = (Panda) cxt10.getBean("pandaBean");
 		System.out.println(panda.getKungFu());
+
+		ApplicationContext cxt11 =
+				new ClassPathXmlApplicationContext("Spring-beans.xml");
+		Person person = (Person) cxt11.getBean("personBean");
+		System.out.println(person);
+
+		ApplicationContext cxt12 =
+				new ClassPathXmlApplicationContext("Spring-beans.xml");
+		Customer customer1 = (Customer) cxt12.getBean("custom");
+		System.out.println(customer1);
 
 	}
 
